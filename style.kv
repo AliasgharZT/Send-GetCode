@@ -1,0 +1,62 @@
+<Style>:
+    mn:mn 
+    num:number
+    cd:code 
+
+    MDScreenManager:
+        id:mn 
+# ////////////////MAIN////////////////////
+        MDScreen:
+            name:'main'
+            MDScreen:
+                MDAnchorLayout:
+                    anchor_x:'center'
+                    anchor_y:'center'
+                    MDBoxLayout:
+                        orientation: 'vertical'
+                        size_hint: 0.7, 0.1
+                        spacing:21
+                        MDTextField:
+                            id:number 
+                            mode:'round'
+                            helper_text:'Enter Number :'
+                            input_filter:'int'
+                            max_text_length: 11
+                        MDAnchorLayout:
+                            anchor_x:'center'
+                            anchor_y:'center'
+                            MDFillRoundFlatButton:
+                                size_hint:0.2,0.1
+                                text:'OK'
+                                on_press:
+                                    root.operation1()
+# ////////////////////FAKE/////////////////
+        MDScreen:
+            name:'fake'
+            MDScreen:
+                MDAnchorLayout:
+                    anchor_x:'center'
+                    anchor_y:'center'
+                    MDBoxLayout:
+                        orientation: 'vertical'
+                        spacing:53
+                        size_hint: 0.7,0.1
+                        MDLabel:
+                            text:'NumberPhone : '+number.text
+                            color: [0,4,1,0.4]
+                            halign:'center'
+                        MDTextField:
+                            id:code 
+                            mode:'rectangle'
+                            helper_text:'EnterCode : '
+                            input_filter:'int'
+                            max_text_length:5
+                        MDAnchorLayout:
+                            anchor_x:'center'
+                            anchor_y:'center'
+                            MDFillRoundFlatButton:
+                                text:'OK'
+                                on_press:
+                                    root.operation2()
+                            
+
